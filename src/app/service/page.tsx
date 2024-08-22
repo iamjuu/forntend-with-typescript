@@ -1,10 +1,14 @@
 import React from 'react';
+import Layout from '@/src/components/Layout/UserLayout';
 
 const service = () => {
   return (
-    <div>
-      <h1>service</h1>
-    </div>
+<>
+
+<Layout>
+  <h1>service</h1>
+</Layout>
+</>
   );
 }
 

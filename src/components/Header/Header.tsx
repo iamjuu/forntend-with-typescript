@@ -9,7 +9,7 @@ import {
 import Link from 'next/link';
 
 const Navbar: React.FC = () => {
-  return (
+ return (
     <nav className="bg-gray-900 text-white w-full">
       <div className="flex justify-between items-center py-6 px-4 xl:px-12">
         <Link href="#" className="text-2xl font-bold font-heading">

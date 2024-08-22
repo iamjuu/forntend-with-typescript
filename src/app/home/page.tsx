@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from '../../components/Header/Header'
+import Layout from '@/src/components/Layout/UserLayout';
 const home = () => {
   return (
-    <div>
-      < Header/>
-      <h1>home
-      </h1>
-    </div>
+    <>
+    <Layout>
+
+<h1>home</h1>
+
+    </Layout>
+    
+    </>
   );
 }
 

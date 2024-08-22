@@ -1,10 +1,13 @@
 import React from 'react';
-
+import Layout from '@/src/components/Layout/UserLayout';
 const page = () => {
   return (
-    <div>
-      <h1>contect</h1>
-    </div>
+ <>
+<Layout>
+  <h1>contact</h1>
+</Layout>
+
+ </>
   );
 }
 
