@@ -6,15 +6,21 @@ import {
   UserCircleIcon, 
   Bars3Icon 
 } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import Image from 'next/image';
 
+import Link from 'next/link';
+import Logo from '../../../public/assets/header/logo.png'
 const Navbar: React.FC = () => {
  return (
     <nav className="bg-gray-900 text-white w-full">
-      <div className="flex justify-between items-center py-6 px-4 xl:px-12">
-        <Link href="#" className="text-2xl font-bold font-heading">
-          Logo Here.
-        </Link>
+      <div className="flex justify-between items-center  xl:px-12">
+        <Link href="/" className="text-xl font-bold font-heading">
+        <Image 
+    src={Logo} 
+    alt="Company Logo" 
+    width={250} 
+    height={150} 
+  />        </Link>
         
         {/* Nav Links */}
         <ul className="hidden md:flex space-x-12 font-semibold font-heading">
