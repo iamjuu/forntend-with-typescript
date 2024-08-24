@@ -25,8 +25,14 @@ const Footer: React.FC = () => {
                 </h2>
 
                 <p className="mt-4 text-gray-500">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
-                  non cupiditate quae nam molestias.
+                A 5-star hotel offers luxury, exceptional service, and premium amenities for an elegant stay.
+
+
+
+
+
+
+
                 </p>
               </div>
             </div>
@@ -91,7 +97,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Helpful Links</p>
+              <p className="font-medium text-gray-900">Help</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
