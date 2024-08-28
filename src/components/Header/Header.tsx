@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
             </span>
           </Link>
-          <Link href="#" className="hover:text-gray-200">
+          <Link href="/profile" className="hover:text-gray-200">
             <UserCircleIcon className="h-6 w-6" />
           </Link>
         </div>

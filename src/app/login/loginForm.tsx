@@ -1,13 +1,17 @@
 'use client';
 
+import axios from 'axios';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 export default function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+  });
+
   const [error, setError] = useState('');
   const router = useRouter();
 
@@ -16,20 +20,15 @@ export default function LoginForm() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        router.push('/dashboard'); // Redirect to dashboard on successful login
-      } else {
-        const data = await response.json();
-        setError(data.message || 'Login failed');
-      }
+      console.log(loginData,'login data')
+      const response = await axios.post('/api/auth/login', { ...loginData });
+      router.push('/dashboard'); 
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.message || 'Login failed');
+      } else {
+        setError('An error occurred. Please try again.');
+      }
     }
   };
 
@@ -41,8 +40,8 @@ export default function LoginForm() {
         type="email"
         autoComplete="email"
         required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={loginData.email}
+        onChange={(e) => setLoginData({...loginData, email: e.target.value})}
         placeholder="Email address"
       />
       <Input
@@ -51,8 +50,8 @@ export default function LoginForm() {
         type="password"
         autoComplete="current-password"
         required
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={loginData.password}
+        onChange={(e) => setLoginData({...loginData, password: e.target.value})}
         placeholder="Password"
       />
       {error && <p className="text-red-500 text-sm">{error}</p>}
